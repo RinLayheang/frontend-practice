@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JolMerl - E-Commerce Dashboard</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- ================= 1. SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo">J</div>
+        <h2>JolMerl</h2>
+      </div>
+
+      <!-- 4 Clickable Sidebar Tabs -->
+      <nav class="nav-links">
+        <a href="#dashboard" class="nav-item active" data-tab="tab-dashboard">
+          <i class="fa-solid fa-house"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#products" class="nav-item" data-tab="tab-products">
+          <i class="fa-solid fa-cube"></i>
+          <span>Products</span>
+        </a>
+        <a href="#orders" class="nav-item" data-tab="tab-orders">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Orders</span>
+        </a>
+        <a href="#settings" class="nav-item" data-tab="tab-settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ================= 2. MAIN CONTENT ================= -->
+    <main class="main-content">
+      <!-- Universal Top Header -->
+      <header class="header">
+        <div class="header-left">
+          <button class="mobile-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="header-title">
+            <h1 id="pageTitle">Sales Report</h1>
+            <p id="pageSubtitle">Friday, December 15th 2023</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="icon-btn notif-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i></button>
+          <div class="user-profile">
+            <img src="assets/profile.jpg" alt="Layheang">
+            <div class="user-info">
+              <strong>Layheang</strong>
+              <small>Admin store</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ================= TAB 1: DASHBOARD ================= -->
+      <section id="tab-dashboard" class="tab-content active">
+        <div class="dashboard-grid">
+          <!-- Left / Center Section -->
+          <div class="left-section">
+            <!-- 4 Stats Cards Grid -->
+            <div class="stats-grid">
+              <!-- Stat 1 (Blue Card) -->
+              <div class="card stat-card blue-card">
+                <div class="stat-top">
+                  <span class="stat-icon"><i class="fa-regular fa-file-lines"></i></span>
+                  <span class="badge badge-light-green">+2.08%</span>
+                </div>
+                <small>Total Sales</small>
+                <div class="stat-val-row">
+                  <h2>$612.917</h2>
+                  <span>Products vs last month</span>
+                </div>
+              </div>
+
+              <!-- Stat 2 -->
+              <div class="card stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon"><i class="fa-regular fa-pen-to-square"></i></span>
+                  <span class="badge badge-green">+12,4%</span>
+                </div>
+                <small>Total Orders</small>
+                <div class="stat-val-row">
+                  <h2>34.760</h2>
+                  <span>Orders vs last month</span>
+                </div>
+              </div>
+
+              <!-- Stat 3 -->
+              <div class="card stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon"><i class="fa-solid fa-percent"></i></span>
+                  <span class="badge badge-red">-2,08%</span>
+                </div>
+                <small>Visitor</small>
+                <div class="stat-val-row">
+                  <h2>14.987</h2>
+                  <span>Users vs last month</span>
+                </div>
+              </div>
+
+              <!-- Stat 4 -->
+              <div class="card stat-card">
+                <div class="stat-top">
+                  <span class="stat-icon"><i class="fa-solid fa-truck"></i></span>
+                  <span class="badge badge-green">+12,1%</span>
+                </div>
+                <small>Total Sold Products</small>
+                <div class="stat-val-row">
+                  <h2>12.987</h2>
+                  <span>Products vs last month</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Customer Habits Chart Card -->
+            <div class="card habits-card">
+              <div class="card-header">
+                <div>
+                  <h3>Customer Habbits</h3>
+                  <p class="subtitle">Track your customer habbits</p>
+                </div>
+                <select class="select-pill"><option>This year</option><option>Last year</option></select>
+              </div>
+
+              <div class="chart-legend">
+                <span><span class="legend-dot gray"></span> Seen product</span>
+                <span><span class="legend-dot blue"></span> Sales</span>
+              </div>
+
+              <div class="chart-wrapper">
+                <div class="y-axis">
+                  <span>60K</span><span>40K</span><span>20K</span><span>10K</span><span>0K</span>
+                </div>
+                <div class="bars-container">
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 48%;"></div><div class="bar bar-blue" style="height: 72%;"></div></div><span>Jan</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 80%;"></div><div class="bar bar-blue" style="height: 60%;"></div></div><span>Feb</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 52%;"></div><div class="bar bar-blue" style="height: 40%;"></div></div><span>Mar</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 85%;"></div><div class="bar bar-blue" style="height: 75%;"></div></div><span>Apr</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 45%;"></div><div class="bar bar-blue" style="height: 50%;"></div></div><span>May</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 70%;"></div><div class="bar bar-blue" style="height: 65%;"></div></div><span>Jun</span></div>
+                  <div class="bar-col"><div class="bar-pair"><div class="bar bar-gray" style="height: 73%;"></div><div class="bar bar-blue" style="height: 56%;"></div></div><span>Jul</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="right-section">
+            <!-- Product Category Statistic Card -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>Category Sales</h3>
+                  <p class="subtitle">Badminton store performance</p>
+                </div>
+                <select class="select-pill"><option>This Month</option><option>Today</option></select>
+              </div>
+
+              <!-- Radial Rings -->
+              <div class="radial-box">
+                <svg viewBox="0 0 160 160" class="radial-svg">
+                  <circle cx="80" cy="80" r="65" class="arc-bg" />
+                  <circle cx="80" cy="80" r="65" class="arc-val arc-blue" stroke-dasharray="320" stroke-dashoffset="90" />
+                  <circle cx="80" cy="80" r="50" class="arc-bg" />
+                  <circle cx="80" cy="80" r="50" class="arc-val arc-light" stroke-dasharray="240" stroke-dashoffset="100" />
+                  <circle cx="80" cy="80" r="35" class="arc-bg" />
+                  <circle cx="80" cy="80" r="35" class="arc-val arc-red" stroke-dasharray="170" stroke-dashoffset="70" />
+                </svg>
+                <div class="radial-center-text">
+                  <h2>8.590</h2>
+                  <small>Items Sold</small>
+                  <span class="badge badge-green center-badge">+14.2%</span>
+                </div>
+              </div>
+
+              <!-- Categories -->
+              <div class="category-list">
+                <div class="category-item">
+                  <span class="cat-name"><i class="fa-solid fa-shirt"></i> Jerseys</span>
+                  <span class="cat-val">4.520</span>
+                  <span class="badge badge-green">+18.2%</span>
+                </div>
+                <div class="category-item">
+                  <span class="cat-name"><i class="fa-solid fa-tape"></i> Grips & String</span>
+                  <span class="cat-val">2.640</span>
+                  <span class="badge badge-green">+11.5%</span>
+                </div>
+                <div class="category-item">
+                  <span class="cat-name"><i class="fa-solid fa-shoe-prints"></i> Rackets & Shoes</span>
+                  <span class="cat-val">1.430</span>
+                  <span class="badge badge-light-blue">+7.8%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Customer Locations Card -->
+            <div class="card">
+              <div class="card-header">
+                <div>
+                  <h3>Customer Locations</h3>
+                  <p class="subtitle">Orders by province in Cambodia</p>
+                </div>
+                <select class="select-pill"><option>All Time</option><option>This Month</option></select>
+              </div>
+
+              <div class="growth-row">
+                <div class="bubbles-wrap">
+                  <div class="bubble bubble-lg">2.417</div>
+                  <div class="bubble bubble-sm">287</div>
+                  <div class="bubble bubble-md">812</div>
+                  <div class="bubble bubble-xs">420</div>
+                </div>
+                <div class="country-list">
+                  <div class="country-item"><span class="flag">🇰🇭</span><span>Phnom Penh</span></div>
+                  <div class="country-item"><span class="flag">🇰🇭</span><span>Siem Reap</span></div>
+                  <div class="country-item"><span class="flag">🇰🇭</span><span>Battambang</span></div>
+                  <div class="country-item"><span class="flag">🇰🇭</span><span>Kandal</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 2: PRODUCTS ================= -->
+      <section id="tab-products" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Products Catalog</h3>
+              <p class="subtitle">Manage and track your inventory</p>
+            </div>
+            <button class="action-btn"><i class="fa-solid fa-plus"></i> Add Product</button>
+          </div>
+
+          <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+              <div class="prod-img-box">
+                <img src="assets/prod-pink-jersey.jpg" alt="Yonex Pink Badminton Jersey">
+              </div>
+              <h4>Yonex Pink Badminton Jersey</h4>
+              <p class="prod-cat">Badminton Apparel</p>
+              <div class="prod-footer">
+                <span class="prod-price">$5.99</span>
+                <span class="badge badge-green">In Stock (50)</span>
+              </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+              <div class="prod-img-box">
+                <img src="assets/prod-mint-jersey.jpg" alt="Yonex Mint Badminton Jersey">
+              </div>
+              <h4>Yonex Mint Badminton Jersey</h4>
+              <p class="prod-cat">Badminton Apparel</p>
+              <div class="prod-footer">
+                <span class="prod-price">$5.99</span>
+                <span class="badge badge-green">In Stock (35)</span>
+              </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+              <div class="prod-img-box">
+                <img src="assets/prod-yonex-grip.jpg" alt="Yonex Super G Grip 3-Pack">
+              </div>
+              <h4>Yonex Super G Grip (3-Pack)</h4>
+              <p class="prod-cat">Badminton Accessories</p>
+              <div class="prod-footer">
+                <span class="prod-price">$5.99</span>
+                <span class="badge badge-green">In Stock (120)</span>
+              </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+              <div class="prod-img-box">
+                <img src="assets/prod-white-jersey.jpg" alt="Yonex White Badminton Jersey">
+              </div>
+              <h4>Yonex White Badminton Jersey</h4>
+              <p class="prod-cat">Badminton Apparel</p>
+              <div class="prod-footer">
+                <span class="prod-price">$5.99</span>
+                <span class="badge badge-red">Low Stock (8)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 3: ORDERS ================= -->
+      <section id="tab-orders" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Recent Orders</h3>
+              <p class="subtitle">Review customer purchases and shipping status</p>
+            </div>
+            <select class="select-pill"><option>All Orders</option><option>Completed</option><option>Pending</option></select>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Product</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#ORD-9821</strong></td>
+                  <td>Sarah Jenkins</td>
+                  <td>Yonex Pink Badminton Jersey</td>
+                  <td>$5.99</td>
+                  <td><span class="badge badge-green">Completed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-9820</strong></td>
+                  <td>Michael Brown</td>
+                  <td>Yonex Super G Grip (3-Pack)</td>
+                  <td>$5.99</td>
+                  <td><span class="badge badge-light-blue">Shipped</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-9819</strong></td>
+                  <td>Emily Davis</td>
+                  <td>Yonex Mint Badminton Jersey</td>
+                  <td>$5.99</td>
+                  <td><span class="badge badge-yellow">Pending</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-9818</strong></td>
+                  <td>James Wilson</td>
+                  <td>Yonex White Badminton Jersey</td>
+                  <td>$5.99</td>
+                  <td><span class="badge badge-green">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB 4: SETTINGS ================= -->
+      <section id="tab-settings" class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Store Settings</h3>
+              <p class="subtitle">Manage store preferences and profile details</p>
+            </div>
+          </div>
+
+          <form class="settings-form" onsubmit="event.preventDefault(); alert('Settings Saved!');">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Store Name</label>
+                <input type="text" value="JolMerl Official">
+              </div>
+              <div class="form-group">
+                <label>Admin Email</label>
+                <input type="email" value="layheang@jolmerl.com">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Currency</label>
+                <select>
+                  <option selected>USD ($)</option>
+                  <option>EUR (€)</option>
+                  <option>KHR (៛)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Timezone</label>
+                <select>
+                  <option selected>UTC+07:00 (Phnom Penh)</option>
+                  <option>UTC+00:00 (London)</option>
+                  <option>UTC-05:00 (New York)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="checkbox-group">
+              <label><input type="checkbox" checked> Send email notifications for new orders</label>
+              <label><input type="checkbox" checked> Send low stock warning alerts</label>
+            </div>
+
+            <button type="submit" class="action-btn">Save Changes</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= JAVASCRIPT: TAB SWITCHING (15 lines) ================= -->
+  <script>
+    // 1. Sidebar Tab Switching
+    const navItems = document.querySelectorAll('.nav-item');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const pageTitle = document.getElementById('pageTitle');
+    const pageSubtitle = document.getElementById('pageSubtitle');
+
+    const tabHeaders = {
+      'tab-dashboard': { title: 'Sales Report', subtitle: 'Friday, December 15th 2023' },
+      'tab-products': { title: 'Product Inventory', subtitle: 'Overview of all active store items' },
+      'tab-orders': { title: 'Orders Management', subtitle: 'Real-time order statuses and shipments' },
+      'tab-settings': { title: 'Store Settings', subtitle: 'Update preferences and account options' }
+    };
+
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetTab = item.getAttribute('data-tab');
+
+        // Toggle active nav styling
+        navItems.forEach(nav => nav.classList.remove('active'));
+        item.classList.add('active');
+
+        // Toggle visible tab content
+        tabContents.forEach(tab => tab.classList.remove('active'));
+        document.getElementById(targetTab).classList.add('active');
+
+        // Update header title & subtitle
+        pageTitle.textContent = tabHeaders[targetTab].title;
+        pageSubtitle.textContent = tabHeaders[targetTab].subtitle;
+
+        // Close sidebar on mobile after clicking
+        document.getElementById('sidebar').classList.remove('open');
+      });
+    });
+
+    // 2. Mobile Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('click', () => {
+      document.getElementById('sidebar').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
