@@ -1,0 +1,26 @@
+/* TODO */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+button {
+    padding: 32px 72px;
+    border: 8px solid #d972b3;
+    border-radius: 48px;
+    background: #f983cb;
+    color: white;
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ad578c;
+    border-color: #6e3759;
+}
